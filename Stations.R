@@ -15,8 +15,26 @@ Stations$methods(
         Lon=numeric())
   },
 
-  stations = function() stationdata,
-  
+  stations = function() {
+    colnames(stationdata) <<-
+       c("City", "State", "Country", "Icao", "Id", "Lat", "Lon") 
+    stationdata
+  },
+
+  plot = function(imgname = "positions.png") {
+    # TODO(tinggao): Move the settings to the end of station data extraction
+    colnames(stationdata) <<-
+       c("City", "State", "Country", "Icao", "Id", "Lat", "Lon") 
+
+    require(ggplot2)
+    require(scales)
+    png(filename = imgname)
+    p <- ggplot(sta, aes(x=Lon, y=Lat, label=Icao)) +
+        geom_point(size=2) + geom_text()
+    print(p)
+    dev.off()
+  },
+
   saxHandler = function() {
     stationdata <<- data.frame(
         City=character(),
@@ -33,11 +51,10 @@ Stations$methods(
           xmlValue(node[["country"]]),
           xmlValue(node[["icao"]]),
           xmlValue(node[["id"]]),
-          xmlValue(node[["lat"]]),
-          xmlValue(node[["lon"]]))
+          as.numeric(xmlValue(node[["lat"]])),
+          as.numeric(xmlValue(node[["lon"]])))
       stationdata <<- rbind(stationdata, newdata)
     }
-    colnames(stationdata) <<- c("city", "state", "country", "icao", "id", "lat", "lon")
     c(station = xmlParserContextFunction(station))
   }
 )
