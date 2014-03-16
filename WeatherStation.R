@@ -1,10 +1,7 @@
 library(RgoogleMaps)
 
 WeatherStation <-  setClass("WeatherStation", 
-                            slots = c(Lat = "numeric", Lon = "numeric",
-  dist = "numeric"))
-
-#Zoomingin <- setClass("Zoomingin", slots=c(zoomdist = "integer"))
+                            slots = c(Lat = "numeric", Lon = "numeric", Distance = "integer"))
 
 plot.WeatherStation <- function(x, ...){
   gx <- x@Lon
@@ -17,12 +14,12 @@ plot.WeatherStation <- function(x, ...){
 setGeneric("plot")
 setMethod("plot", c(x = "WeatherStation", y = "missing"), plot.WeatherStation)
 
+setMethod("subset", "WeatherStation", function(x, dis = 40) {
+  r <- data.frame(x@Lat, x@Lon, x@Distance)
+  colnames(r) <- c("Lat", "Lon", "Distance")
+  r[r$Distance < dis, ]
+})
 
-subset.WeatherStation <- function(x, Dist, ...){
-  subset(x, x@dist<Dist)
-}
-setGeneric("subset")
-setMethod("subset", c(x = "WeatherStation"), subset.WeatherStation )
 
 setValidity("WeatherStation",
             function(object) {
