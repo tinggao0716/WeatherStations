@@ -1,23 +1,28 @@
+library(RgoogleMaps)
 
 WeatherStation <-  setClass("WeatherStation", 
                             slots = c(Lat = "numeric", Lon = "numeric"))
-                            #slots = c(City="character", State="character",
-                            #Country="character", Id="character",  
-                            #Lat = "numeric", Lon = "numeric",
-                            #Distance = "numeric"))
+                                     # dist = "integer"))
 
-
+#Zoomingin <- setClass("Zoomingin", slots=c(zoomdist = "integer"))
 
 plot.WeatherStation <- function(x, ...){
   gx <- x@Lon
   gy <- x@Lat
-  plot(gx, gy,  pch = "*", xlab = "Longitude", ylab ="Latitude", ...)
+  mymap <- MapBackground(lat=gy, lon=gx) 
+  PlotOnStaticMap(mymap, lat=gy, lon=gx,
+                  destfile = "weatherstations.png", cex=1.5,pch=20, col="red")
 }
 
 setGeneric("plot")
-
 setMethod("plot", c(x = "WeatherStation", y = "missing"), plot.WeatherStation)
 
+
+#subset.WeatherStation <- function(x, Dist, ...){
+#  subset(x, x@dist<Dist)
+#}
+#setGeneric("subset")
+#setMethod("subset", c(x = "WeatherStation", Dist = "Zoomingin"), subset.WeatherStation )
 
 setValidity("WeatherStation",
             function(object) {
