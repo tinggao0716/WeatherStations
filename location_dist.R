@@ -21,9 +21,3 @@ Stations <- function(location, dist_km){
 }
 
 
-location <- c(37.786289,-122.405234)
-dist_km <- 10
-filename <- paste(location[1], "_", location[2], 
-                  "_", dist_km, ".csv", sep="")
-stationdata <- Stations(location, dist_km)
-write.csv(stationdata, filename, row.names=FALSE)

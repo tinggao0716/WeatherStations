@@ -1,8 +1,8 @@
 library(RgoogleMaps)
 
 WeatherStation <-  setClass("WeatherStation", 
-                            slots = c(Lat = "numeric", Lon = "numeric"))
-                                     # dist = "integer"))
+                            slots = c(Lat = "numeric", Lon = "numeric",
+  dist = "numeric"))
 
 #Zoomingin <- setClass("Zoomingin", slots=c(zoomdist = "integer"))
 
@@ -18,11 +18,11 @@ setGeneric("plot")
 setMethod("plot", c(x = "WeatherStation", y = "missing"), plot.WeatherStation)
 
 
-#subset.WeatherStation <- function(x, Dist, ...){
-#  subset(x, x@dist<Dist)
-#}
-#setGeneric("subset")
-#setMethod("subset", c(x = "WeatherStation", Dist = "Zoomingin"), subset.WeatherStation )
+subset.WeatherStation <- function(x, Dist, ...){
+  subset(x, x@dist<Dist)
+}
+setGeneric("subset")
+setMethod("subset", c(x = "WeatherStation"), subset.WeatherStation )
 
 setValidity("WeatherStation",
             function(object) {
