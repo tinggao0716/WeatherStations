@@ -1,0 +1,93 @@
+* using log directory '/home/ting2/WeatherStations/pws_pkg/pws.Rcheck'
+* using R version 3.0.2 (2013-09-25)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: ASCII
+* checking for file 'pws/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'pws' version '1.0'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package 'pws' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: /home/ting2/WeatherStations/pws_pkg/pws/man/pws-package.Rd:35: All text must be in a section
+  Warning: /home/ting2/WeatherStations/pws_pkg/pws/man/pws-package.Rd:36: All text must be in a section
+See '/home/ting2/WeatherStations/pws_pkg/pws.Rcheck/00install.out' for details.
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  What license is it under?
+Standardizable: FALSE
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... WARNING
+prepare_Rd: brob-class.Rd:37-39: Dropping empty section \note
+prepare_Rd: brob-class.Rd:34-36: Dropping empty section \author
+prepare_Rd: brob-class.Rd:31-33: Dropping empty section \references
+prepare_Rd: brob-class.Rd:43-46: Dropping empty section \seealso
+prepare_Rd: brob.Rd:8-10: Dropping empty section \description
+prepare_Rd: brob.Rd:23-25: Dropping empty section \details
+prepare_Rd: brob.Rd:26-32: Dropping empty section \value
+prepare_Rd: brob.Rd:39-41: Dropping empty section \note
+prepare_Rd: brob.Rd:36-38: Dropping empty section \author
+prepare_Rd: brob.Rd:33-35: Dropping empty section \references
+prepare_Rd: brob.Rd:45-47: Dropping empty section \seealso
+checkRd: (5) brob.Rd:0-55: Must have a \description
+prepare_Rd: print.brob.Rd:8-10: Dropping empty section \description
+prepare_Rd: print.brob.Rd:23-25: Dropping empty section \details
+prepare_Rd: print.brob.Rd:26-32: Dropping empty section \value
+prepare_Rd: print.brob.Rd:39-41: Dropping empty section \note
+prepare_Rd: print.brob.Rd:36-38: Dropping empty section \author
+prepare_Rd: print.brob.Rd:33-35: Dropping empty section \references
+prepare_Rd: print.brob.Rd:45-47: Dropping empty section \seealso
+checkRd: (5) print.brob.Rd:0-65: Must have a \description
+prepare_Rd: pws-package.Rd:35: All text must be in a section
+prepare_Rd: pws-package.Rd:36: All text must be in a section
+prepare_Rd: swift-class.Rd:7-9: Dropping empty section \description
+prepare_Rd: swift-class.Rd:20-22: Dropping empty section \note
+prepare_Rd: swift-class.Rd:17-19: Dropping empty section \author
+prepare_Rd: swift-class.Rd:14-16: Dropping empty section \references
+prepare_Rd: swift-class.Rd:26-29: Dropping empty section \seealso
+checkRd: (5) swift-class.Rd:0-34: Must have a \description
+* checking Rd metadata ... WARNING
+Rd files with duplicated alias 'show,brob-method':
+  'brob-class.Rd' 'show-methods.Rd'
+* checking Rd cross-references ... WARNING
+Unknown package '<pkg>' in Rd xrefs
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... NOTE
+S3 methods shown with full name in documentation object 'print.brob':
+  'print.brob'
+
+The \usage entries for S3 methods should use the \method markup and not
+their full name.
+See the chapter 'Writing R documentation files' in the 'Writing R
+Extensions' manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
+WARNING: There were 5 warnings.
+NOTE: There was 1 note.

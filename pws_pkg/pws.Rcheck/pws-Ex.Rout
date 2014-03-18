@@ -1,0 +1,153 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "pws"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('pws')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("brob-class")
+> ### * brob-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: brob-class
+> ### Title: Class '"brob"'
+> ### Aliases: brob-class show,brob-method
+> ### Keywords: classes
+> 
+> ### ** Examples
+> 
+> showClass("brob")
+Class "brob" [package "pws"]
+
+Slots:
+                        
+Name:         x positive
+Class:  numeric  logical
+
+Extends: "swift"
+> 
+> 
+> 
+> cleanEx()
+> nameEx("brob")
+> ### * brob
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: brob
+> ### Title: dsafa
+> ### Aliases: brob
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+>   1+1
+[1] 2
+> 
+> 
+> 
+> cleanEx()
+> nameEx("print.brob")
+> ### * print.brob
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: print.brob
+> ### Title: dsfasf
+> ### Aliases: print.brob
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (x, ...) 
++ {
++     jj <- .Brob.print(x, ...)
++     print(jj)
++     return(invisible(jj))
++   }
+function (x, ...) 
+{
+    jj <- .Brob.print(x, ...)
+    print(jj)
+    return(invisible(jj))
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("pws-package")
+> ### * pws-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pws-package
+> ### Title: sdf What the package does (short line) ~~ package title ~~
+> ### Aliases: pws-package pws
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+>   2+21
+[1] 23
+> 
+> 
+> 
+> cleanEx()
+> nameEx("swift-class")
+> ### * swift-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: swift-class
+> ### Title: Class '"swift"'
+> ### Aliases: swift-class
+> ### Keywords: classes
+> 
+> ### ** Examples
+> 
+> showClass("swift")
+Virtual Class "swift" [package "pws"]
+
+No Slots, prototype of class "S4"
+
+Known Subclasses: "brob"
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.192 0.012 0.207 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
