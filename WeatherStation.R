@@ -1,7 +1,28 @@
 library(RgoogleMaps)
 
-WeatherStation <-  setClass("WeatherStation", 
-                            slots = c(Lat = "numeric", Lon = "numeric", Distance = "integer"))
+setClass("WeatherStation", 
+         slots = c(Lat = "numeric", Lon = "numeric", Distance = "integer"))
+
+.WeatherStation.valid <- function(object) {
+  len <- length(object@Lat)
+  if(len != length(object@Lon) || len != length(object@Distance)) {
+    return("length mismatch")
+  }
+  return(TRUE)
+}
+
+setValidity("WeatherStation", .WeatherStation.valid)
+
+"WeatherStation" <- function(Lat=double(), Lon=double(), Distance=integer()){
+  new("WeatherStation",Lat=as.numeric(Lat),Lon = as.numeric(Lon), Distance=as.integer(Distance))
+}
+
+setMethod("subset", "WeatherStation", function(x, dis = 40) {
+          r <- data.frame(x@Lat, x@Lon, x@Distance)
+          colnames(r) <- c("Lat", "Lon", "Distance")
+          r <- r[r$Distance < dis, ]
+          WeatherStation(r$Lat, r$Lon, r$Distance)
+         })
 
 plot.WeatherStation <- function(x, ...){
   gx <- x@Lon
@@ -14,24 +35,13 @@ plot.WeatherStation <- function(x, ...){
 setGeneric("plot")
 setMethod("plot", c(x = "WeatherStation", y = "missing"), plot.WeatherStation)
 
-setMethod("subset", "WeatherStation", function(x, dis = 40) {
+.getDf.WeatherStation <- function(x, ...) {
   r <- data.frame(x@Lat, x@Lon, x@Distance)
   colnames(r) <- c("Lat", "Lon", "Distance")
-  r[r$Distance < dis, ]
-})
+  r
+}
 
-
-setValidity("WeatherStation",
-            function(object) {
-              messages <- character()
-              slots <- c("Lat", "Lon")
-              lengths <- sapply(slots,
-                                function(what) length(slot(object, what)))
-              if(length(unique(lengths))>1)
-                messages <- paste("unequal lengths : ",
-                                  paste(slots, lengths, sep =":", collapse = ", "))
-              if(length(messages))
-                messages
-              else
-                TRUE
-            })
+setGeneric("getDf",function(x){standardGeneric("getDf")})
+setMethod("getDf", "WeatherStation", function(x) {
+          .getDf.WeatherStation(x)
+                  })
