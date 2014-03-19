@@ -6,8 +6,6 @@
 
 library(XML)
 
-source("WeatherStation.R")
-
 Stations <- function(location, dist_km){
   lat <- location[1]
   lon <- location[2]
@@ -25,7 +23,5 @@ Stations <- function(location, dist_km){
     stringsAsFactors=FALSE)
 
   results <- stationdata[stationdata$Distance <= dist_km, ]
-
-  WeatherStation(results)
 }
 

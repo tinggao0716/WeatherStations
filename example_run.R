@@ -16,7 +16,8 @@ location <- c(37.786289,-122.405234)
 dist_km <- 30
 filename <- paste("./data/", location[1], "_", location[2], 
                                     "_", dist_km, ".rds", sep="")
-#PwsStations <- Stations(location, dist_km)
+#df <- Stations(location, dist_km)
+#PwsStations <- WeatherStations(df)
 #saveDf(PwsStations, filename)
 ws <- loadDf(filename)
 cat("Weather stations got")

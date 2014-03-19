@@ -1,3 +1,9 @@
+library(XML)
+library(ggplot2)
+library(gridExtra)
+library(RgoogleMaps)
+library(ggmap)
+
 getCond <- function(startDt, endDt, stationdata) {  
   #get number of stations
   numStations <- nrow(stationdata)

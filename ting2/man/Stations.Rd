@@ -46,10 +46,17 @@ Stations(location, dist_km)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-1 + 1
+library(XML)
+library(ggplot2)
+library(gridExtra)
+library(RgoogleMaps)
+library(ggmap)
+
+location <- c(37.786289,-122.405234)
+dist_km <- 30
+# This call needs web access
+df <- Stations(location, dist_km)
+PwsStations <- WeatherStation(df)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

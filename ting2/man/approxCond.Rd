@@ -38,13 +38,6 @@ Ben Sheng
 }
 
 \examples{
-startDate <- "2014-03-04"
-endDate <- "2014-03-04"
-Id <- c("KCASANFR231", "KCASANFR102", "KCASANFR53")
-Lat <- c(37.78280, 37.79358, 37.77412)
-Lon <- c(-122.4072, -122.3993, -122.3964)
-PWS <- data.frame(Id, Lat, Lon)
-PWSConditions <- getCond(startDate, endDate, PWS)
-InpTime <- "2014-03-04 12:00"  
-InpTimeCond <- approxCond(InpTime, PWS, PWSConditions) 
+  1+1
 }
+
