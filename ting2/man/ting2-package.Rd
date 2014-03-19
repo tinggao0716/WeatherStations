@@ -3,13 +3,10 @@
 \alias{ting2}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Weather Station data 
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
-}
+Organize, visualize and model weather station conditions. 
 \details{
 \tabular{ll}{
 Package: \tab ting2\cr
@@ -23,10 +20,8 @@ Depends: \tab methods\cr
 ~~ functions ~~
 }
 \author{
-Who wrote it
+Ting Gao <tinggao0716@gmail.com>
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
 }
 \references{
 ~~ Literature or other references for background information ~~
