@@ -2,11 +2,10 @@
 \alias{loadDf}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
-TBD
+Load stations data
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Load station data from S4 class
 }
 \usage{
 loadDf(filename)
@@ -31,17 +30,10 @@ loadDf(filename)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Ting Gao
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 createTestDf <- function(){
   data.frame(
@@ -62,5 +54,4 @@ createTestDf <- function(){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{loadfile}
