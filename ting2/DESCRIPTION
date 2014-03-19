@@ -3,8 +3,8 @@ Type: Package
 Title: What the package does (short line)
 Version: 1.0
 Date: 2014-03-19
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Ting Gao
+Maintainer: Ting Gao <tinggao0716@gmail.com>
+Description: weather station data project
+License: GPL-2
 Depends: methods
