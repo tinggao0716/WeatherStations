@@ -1,0 +1,10 @@
+exportPattern("^[[:alpha:]]+")
+exportMethods(
+    "getDf",
+    "plot",
+    "saveDf",
+    "subset" 
+)
+exportClasses(
+    "WeatherStation" 
+)
