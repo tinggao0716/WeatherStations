@@ -4,9 +4,9 @@
 \alias{plot,ANY,ANY-method}
 \alias{plot,WeatherStation,missing-method}
 \alias{plot,color,ANY-method}
-\title{ ~~ Methods for Function \code{plot}  ~~}
+\title{plot the stations \code{plot}}
 \description{
- ~~ Methods for function \code{plot}  ~~
+ plot the stations \code{plot}  
 }
 \section{Methods}{
 \describe{
@@ -24,4 +24,4 @@
 }
 }}
 \keyword{methods}
-\keyword{ ~~ other possible keyword(s) ~~ }
+
