@@ -1,3 +1,8 @@
+#######################################
+# Test cases for S4 class WeatherStation
+#
+# Author: Ting Gao (ting2)
+#######################################
 library(testthat)
 
 createTestDf <- function(){
