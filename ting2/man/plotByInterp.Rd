@@ -2,8 +2,7 @@
 \alias{plotByInterp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
-TBD
+Plot weather conditions for a given vector of time and a specified station
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -37,7 +36,7 @@ plotByInterp(weatherCond, stationId, timeSeq)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+ Ting Gao
 }
 \note{
 %%  ~~further notes~~
