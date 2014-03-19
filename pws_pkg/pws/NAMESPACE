@@ -1,8 +1,0 @@
-exportPattern("^[[:alpha:]]+")
-exportMethods(
-    "show" 
-)
-exportClasses(
-    "brob",
-     "swift" 
-)
