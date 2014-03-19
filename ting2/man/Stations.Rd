@@ -6,7 +6,7 @@
 Function to extract all PWS given a location and distance.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Connect to wunderground website, and extract the XML given location and distance. Then parse the XML and put the data in a data frame.
 }
 \usage{
 Stations(location, dist_km)
