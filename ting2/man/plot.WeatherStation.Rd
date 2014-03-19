@@ -5,23 +5,21 @@
   Function to plot locations of weather stations
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+plot station locations}
 \usage{
 plot.WeatherStation(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
-\arguments{
-  \item{x}{
+%\arguments{
+%  \item{x}{
 %%     ~~Describe \code{x} here~~
-}
-  \item{\dots}{
+%}
+%  \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+%}
+%}
+%\details{}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -30,20 +28,13 @@ plot.WeatherStation(x, ...)
 %% ...
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
+SoDa}
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Ting Gao
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 library(XML)
 library(ggplot2)
