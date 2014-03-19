@@ -1,3 +1,9 @@
+#######################################
+# S4 class for WeatherStations
+#
+# Author: Ting Gao (ting2)
+#######################################
+
 library(RgoogleMaps)
 
 setClass("WeatherStation", 

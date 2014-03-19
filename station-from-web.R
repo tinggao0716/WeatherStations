@@ -1,4 +1,9 @@
-# Ting's code: create table for all PWS in a region specified by location and distance
+#######################################
+# create table for all PWS in a region specified by location and distance
+#
+# Author: Ting Gao (ting2)
+#######################################
+
 library(XML)
 
 source("WeatherStation.R")
