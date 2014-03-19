@@ -4,6 +4,7 @@
 # Author: Ting Gao (ting2)
 #######################################
 library(testthat)
+library(ting2)
 
 createTestDf <- function(){
   data.frame(
