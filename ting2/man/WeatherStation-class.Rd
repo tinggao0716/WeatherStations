@@ -9,7 +9,7 @@
 
 \title{Class \code{"WeatherStation"}}
 \description{
-%%  ~~ A concise (1-5 lines) description of what the class is. ~~
+S4 class for stations table
 }
 \section{Objects from the Class}{
 Objects can be created by calls of the form \code{new("WeatherStation", ...)}.
@@ -29,21 +29,15 @@ Objects can be created by calls of the form \code{new("WeatherStation", ...)}.
 	 }
 }
 \references{
-%%  ~~put references to the literature/web site here~~
+SoDA
 }
 \author{
-%%  ~~who you are~~
+Ting Gao
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%%  ~~objects to See Also as \code{\link{~~fun~~}}, ~~~
-%%  ~~or \code{\linkS4class{CLASSNAME}} for links to other classes ~~~
-}
 \examples{
 showClass("WeatherStation")
 }
