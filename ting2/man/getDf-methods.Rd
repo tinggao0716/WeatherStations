@@ -1,4 +1,4 @@
-\name{getDf}
+\name{getDf-methods}
 \docType{methods}
 \alias{getDf-methods}
 \alias{getDf,WeatherStation-method}
