@@ -69,3 +69,12 @@ setMethod("getDf", "WeatherStation", function(x) {
           .getDf.WeatherStation(x)
                              })
 
+setGeneric("saveDf", function(x, filename) standardGeneric("saveDf"))
+setMethod("saveDf", "WeatherStation", function(x, filename) {
+          saveRDS(x@stationdata, file=filename)
+                             })
+
+loadDf <- function(filename) {
+  WeatherStation(readRDS(filename))
+}
+
