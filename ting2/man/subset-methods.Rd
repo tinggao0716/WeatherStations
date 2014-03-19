@@ -2,7 +2,7 @@
 \docType{methods}
 \alias{subset-methods}
 \alias{subset,WeatherStation-method}
-\title{ ~~ Methods for Function \code{subset}  ~~}
+\title{ Methods for Function \code{subset}  }
 \description{
  ~~ Methods for function \code{subset}  ~~
 }
