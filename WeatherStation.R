@@ -78,3 +78,13 @@ loadDf <- function(filename) {
   WeatherStation(readRDS(filename))
 }
 
+plot.WeatherStation <- function(x, ...){
+  gx <- x@stationdata$Lon
+  gy <- x@stationdata$Lat
+  mymap <- MapBackground(lat=gy, lon=gx) 
+  PlotOnStaticMap(mymap, lat=gy, lon=gx,
+                  destfile = "weatherstations.png", cex=1.5,pch=20, col="red")
+}
+
+setGeneric("plot")
+setMethod("plot", c(x = "WeatherStation", y = "missing"), plot.WeatherStation)
