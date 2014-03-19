@@ -1,10 +1,11 @@
 #######################################
-# Time series weather condition interpolation
+# Plot weather condition given time poitns
+# using interpolation
 #
 # Author: Ting Gao (ting2)
 #######################################
 
-plotTimeCond <- function(weatherCond, stationId, timeSeq) {
+plotByInterp <- function(weatherCond, stationId, timeSeq) {
   times <- weatherCond[[1]][["localTimes"]]
   times <- as.POSIXct(times)
   temp <- weatherCond[[stationId]][["temperatureC"]]

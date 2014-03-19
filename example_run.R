@@ -12,11 +12,11 @@ library(ggmap)
 
 # get weather stations object (S4 class)
 source("station-from-web.R")
-Location <- c(37.786289,-122.405234)
-distanceKm <- 10
-filename <- paste(location[1], "_", location[2], 
-                                    "_", dist_km, ".csv", sep="")
-#PwsStations <- Stations(Location, distanceKm)
+location <- c(37.786289,-122.405234)
+dist_km <- 30
+filename <- paste("./data/", location[1], "_", location[2], 
+                                    "_", dist_km, ".rds", sep="")
+#PwsStations <- Stations(location, dist_km)
 #saveDf(PwsStations, filename)
 ws <- loadDf(filename)
 cat("Weather stations got")
@@ -28,7 +28,7 @@ dev.off()
 cat("Weather stations plotted")
 
 # get weather conditions for station list
-source("getCond.R")
+source("cond_util.R")
 startDate <- "2014-03-12"
 endDate <- "2014-03-13"
 #weatherConditions <- getCond(startDate, endDate, getDf(ws))
@@ -38,9 +38,8 @@ wc <- readRDS(cond_file)
 cat("Conditions obtained")
                                                         
 #approximate station weather data for a particular time 
-source("approxCond.R")
 Inptime <- "2014-03-12 12:00"                           
-InptimeCond <- approxCond(Inptime, getDf(ws), weatherConditions)
+InptimeCond <- approxCond(Inptime, getDf(ws), wc)
 cat("approximate conditions obtained")
 
 #list out conditions for reference                      
@@ -48,7 +47,6 @@ names(InptimeCond)[!(names(InptimeCond) %in% c("Id", "Lat", "Lon"))]
 
 #plot a weather condition for all stations              
 #plot will be in pdf                                    
-source("plotCond.R")
 plotCond(InptimeCond, "temperatureC")
 plotCond(InptimeCond, "humidity")
 cat("Conditions plotted")
@@ -62,8 +60,8 @@ cond_file <- "./data/conditions_5.rds"
 wc5 <- readRDS(cond_file)
 cat("Conditions for question 5 obtained")
 
-source("TimeCond.R")
+source("computation_util.R")
 stationId <- getDf(ws)$Id[1]
 timeSeq <- seq(as.POSIXct(startDt),to=as.POSIXct(endDt),by="hour")
-plotTimeCond(wc5, stationId, timeSeq)
+plotByInterp(wc5, stationId, timeSeq)
 
