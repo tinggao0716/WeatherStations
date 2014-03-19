@@ -31,15 +31,8 @@ Stations(location, dist_km)
 %% ...
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  Ting Gao}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+lectures}
+\author{  Ting Gao}
 
 
 \examples{
@@ -55,6 +48,5 @@ dist_km <- 30
 df <- Stations(location, dist_km)
 PwsStations <- WeatherStation(df)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 
