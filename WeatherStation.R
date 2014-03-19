@@ -13,6 +13,10 @@ setClass("WeatherStation",
                                                  Distance=numeric())))
 
 .WeatherStation.valid <- function(object) {
+  if (nrow(object@stationdata) == 0) {
+    return (TRUE)
+  }
+
   if (!is.character(object@stationdata$City)){
     return("City type mismatch")  
   }

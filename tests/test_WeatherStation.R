@@ -12,6 +12,11 @@ createTestDf <- function(){
              stringsAsFactors=FALSE)
 }
 
+test_that("Create empty WeatherStation", {
+          ws<-WeatherStation()
+          expect_that(nrow(getDf(ws)), equals(0))
+             })
+
 test_that("Create WeatherStation correctly", {
           df <- createTestDf()
           ws<-WeatherStation(df)
