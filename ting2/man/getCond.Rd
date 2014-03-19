@@ -1,60 +1,48 @@
 \name{getCond}
 \alias{getCond}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
-%%  ~~function to do ... ~~
-TBD
+get weather conditions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Returns the weather conditions for regional PWS.
 }
 \usage{
 getCond(startDt, endDt, stationdata)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{startDt}{
-%%     ~~Describe \code{startDt} here~~
+the start date (in the format "YYYY-MM-DD")
 }
   \item{endDt}{
-%%     ~~Describe \code{endDt} here~~
+the end date (in the format "YYYY-MM-DD")
 }
   \item{stationdata}{
-%%     ~~Describe \code{stationdata} here~~
+a data frame of regional PWS
 }
 }
+
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+At each date in the sequence (from start date to end date), for each PWS, the function queries the Wunderground historical database, and parses the xml.  This obtains weather conditions (temperature in C, dew point in C, humidity, wind speed in km/hr, wind gust in km/hr, pressure in mbar, precipitation rate in mm/hr, and precipitation total in mm) at various times (the times are local, not UTC).
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+The output is a list of PWS conditions, where each list element is a data frame of weather conditions for a particular PWS.
 }
 \references{
-%% ~put references to the literature/web site here ~
+http://api.wunderground.com/
+http://api.wunderground.com/api/b340be89948f3793/history_20140304/q/pws:KCASANFR231.xml
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Ben Sheng
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-  1+1
+startDate <- "2014-03-04"
+endDate <- "2014-03-04"
+Id <- c("KCASANFR231", "KCASANFR102", "KCASANFR53")
+Lat <- c(37.78280, 37.79358, 37.77412)
+Lon <- c(-122.4072, -122.3993, -122.3964)
+PWS <- data.frame(Id, Lat, Lon)
+PWSConditions <- getCond(startDate, endDate, PWS)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

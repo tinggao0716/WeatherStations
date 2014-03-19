@@ -1,60 +1,50 @@
 \name{approxCond}
 \alias{approxCond}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
-%%  ~~function to do ... ~~
-TBD
+approximate weather conditions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Uses linear approximation to return the weather conditions for a specified time. 
 }
 \usage{
 approxCond(inputTime, stationdata, weatherCond)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{inputTime}{
-%%     ~~Describe \code{inputTime} here~~
+the input time (in the format "YYYY-MM-DD hh:mm")
 }
   \item{stationdata}{
-%%     ~~Describe \code{stationdata} here~~
+a data frame of regional PWS
 }
   \item{weatherCond}{
-%%     ~~Describe \code{weatherCond} here~~
+a list of PWS conditions (this is the output from the getCond function)
 }
 }
+
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+For each PWS and weather condition, the function uses linear approximation to estimate the value at the input time.  The function also handles missing data (some PWS have no data for a particular date) and invalid data (e.g., negative wind speed).
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+The output is a data frame of weather conditions estimated at the input time for each PWS.
 }
 \references{
-%% ~put references to the literature/web site here ~
+http://api.wunderground.com/
+http://api.wunderground.com/api/b340be89948f3793/history_20140304/q/pws:KCASANFR231.xml
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Ben Sheng
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-  1+1
+startDate <- "2014-03-04"
+endDate <- "2014-03-04"
+Id <- c("KCASANFR231", "KCASANFR102", "KCASANFR53")
+Lat <- c(37.78280, 37.79358, 37.77412)
+Lon <- c(-122.4072, -122.3993, -122.3964)
+PWS <- data.frame(Id, Lat, Lon)
+PWSConditions <- getCond(startDate, endDate, PWS)
+InpTime <- "2014-03-04 12:00"  
+InpTimeCond <- approxCond(InpTime, PWS, PWSConditions) 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

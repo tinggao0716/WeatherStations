@@ -1,57 +1,52 @@
 \name{plotCond}
 \alias{plotCond}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
-%%  ~~function to do ... ~~
-TBD
+plot weather conditions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plots a particular weather condition for a given set of weather stations, and prints the plot to pdf.
 }
 \usage{
 plotCond(StationCond, condition)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{StationCond}{
-%%     ~~Describe \code{StationCond} here~~
+data frame of weather conditions for each PWS (this is the output from the approxCond function)
 }
   \item{condition}{
-%%     ~~Describe \code{condition} here~~
+the variable name for a weather condition (e.g., "temperatureC")
 }
 }
+
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The function uses RgoogleMaps, ggmap, and ggplot in order to plot the PWS against a Google maps background.  In the plot, the weather condition magnitude is shown in shades of blue (higher values are shown in lighter blue, and lower values are shown in darker blue); invalid data points are represented as gray dots.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+The output is a pdf, and the pdf name is the variable name.
 }
 \references{
-%% ~put references to the literature/web site here ~
+http://api.wunderground.com/
+http://api.wunderground.com/api/b340be89948f3793/history_20140304/q/pws:KCASANFR231.xml
+http://journal.r-project.org/archive/2013-1/kahle-wickham.pdf
 }
 \author{
-%%  ~~who you are~~
+Ben Sheng
 }
 \note{
-%%  ~~further notes~~
+Examine the packages RgoogleMaps and ggmap.
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-  1+1
+startDate <- "2014-03-04"
+endDate <- "2014-03-04"
+Id <- c("KCASANFR231", "KCASANFR102", "KCASANFR53")
+Lat <- c(37.78280, 37.79358, 37.77412)
+Lon <- c(-122.4072, -122.3993, -122.3964)
+PWS <- data.frame(Id, Lat, Lon)
+PWSConditions <- getCond(startDate, endDate, PWS)
+InpTime <- "2014-03-04 12:00"  
+InpTimeCond <- approxCond(InpTime, PWS, PWSConditions)  
+plotCond(InpTimeCond, "temperatureC")
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
