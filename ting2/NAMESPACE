@@ -1,5 +1,4 @@
 exportPattern("^[[:alpha:]]+")
-import(XML, ggplot2, gridExtra, RgoogleMaps, ggmap)
 exportMethods(
     "getDf",
     "plot",
