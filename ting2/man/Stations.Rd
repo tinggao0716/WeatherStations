@@ -35,18 +35,18 @@ lectures}
 \author{  Ting Gao}
 
 
-%\examples{
-%library(XML)
-%library(ggplot2)
-%library(gridExtra)
-%library(RgoogleMaps)
-%library(ggmap)
+\examples{
+library(XML)
+library(ggplot2)
+library(gridExtra)
+library(RgoogleMaps)
+library(ggmap)
 
-%location <- c(37.786289,-122.405234)
-%dist_km <- 30
-%# This call needs web access
-%df <- Stations(location, dist_km)
-%PwsStations <- WeatherStation(df)
-%}
+location <- c(37.786289,-122.405234)
+dist_km <- 30
+# This call needs web access
+df <- Stations(location, dist_km)
+PwsStations <- WeatherStation(df)
+}
 
 
