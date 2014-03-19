@@ -34,8 +34,7 @@ Stations(location, dist_km)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
-}
+%%  Ting Gao}
 \note{
 %%  ~~further notes~~
 }
